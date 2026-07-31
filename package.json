@@ -1,0 +1,57 @@
+{
+  "name": "@dexvis/viewport-gizmo",
+  "version": "0.1.0",
+  "description": "Interactive camera-orientation cube for three.js viewports. Fork of three-viewport-gizmo: cube-only, WebGPURenderer support, configurable view orientations (HENP/CAD axis conventions), roll and home controls.",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dexvis/viewport-gizmo.git"
+  },
+  "keywords": [
+    "three",
+    "threejs",
+    "gizmo",
+    "viewport",
+    "camera",
+    "navigation",
+    "cube",
+    "webgpu"
+  ],
+  "author": "dexvis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dexvis/viewport-gizmo/issues"
+  },
+  "homepage": "https://github.com/dexvis/viewport-gizmo#readme",
+  "peerDependencies": {
+    "three": ">=0.180.0"
+  },
+  "devDependencies": {
+    "@types/three": "^0.180.0",
+    "three": "^0.183.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}
