@@ -44,8 +44,8 @@ export const intersectedObjects = (
     if (nearHits.length > 1) {
       nearHits.sort(
         (a, b) =>
-          (b.object.userData.intersectionOrder || 0) -
-          (a.object.userData.intersectionOrder || 0)
+          (b.object.userData['intersectionOrder'] || 0) -
+          (a.object.userData['intersectionOrder'] || 0)
       );
 
       intersects.splice(0, nearHits.length, ...nearHits);

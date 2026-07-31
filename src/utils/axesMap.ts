@@ -194,7 +194,7 @@ export const axesMap = (options: GizmoOptionsFallback, offset: number = 2) => {
 };
 
 export const setMapHoverOffset = (map: Texture, hover: boolean) =>
-  (map.offset.x = (hover ? 0.5 : 0) + map.userData.offsetX);
+  (map.offset.x = (hover ? 0.5 : 0) + map.userData['offsetX']);
 
 export const setMapColumnOffset = (map: Texture, col: number) => {
   const {

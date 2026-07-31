@@ -5,7 +5,7 @@ export const updateBackground = (
   hovered: boolean = true
 ) => {
   const { material, userData } = background;
-  const { color, opacity } = hovered ? userData.hover : userData;
+  const { color, opacity } = hovered ? userData['hover'] : userData;
 
   material.color.set(color);
   material.opacity = opacity;
