@@ -34,7 +34,7 @@ import { GIZMO_EPSILON, GIZMO_TURN_RATE } from "./utils/constants";
 import { updateBackground } from "./utils/updateBackground";
 import type { OrbitControls } from "three/examples/jsm/Addons.js";
 import { optionsFallback } from "./utils/optionsFallback";
-import { clamp } from "three/src/math/MathUtils.js";
+import { MathUtils } from "three";
 import { axesObjects } from "./utils/axesObjects";
 import { axisHover } from "./utils/axisHover";
 import { resolveViewUp, viewQuaternion } from "./orientation";
@@ -611,7 +611,7 @@ export class ViewportGizmo extends Object3D<ViewportGizmoEventMap> {
       const spherical = _spherical.setFromVector3(direction);
 
       spherical.theta = initialTheta - pointerAngle.x;
-      spherical.phi = clamp(
+      spherical.phi = MathUtils.clamp(
         initialPhi - pointerAngle.y,
         GIZMO_EPSILON,
         Math.PI - GIZMO_EPSILON
