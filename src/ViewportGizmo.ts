@@ -305,6 +305,22 @@ export class ViewportGizmo extends Object3D<ViewportGizmoEventMap> {
   }
 
   /**
+   * Moves the gizmo overlay into another container element. Use when the view
+   * the gizmo belongs to is re-parented (page/layout switches) — the overlay
+   * div moves with it and the viewport rectangle is recomputed.
+   *
+   * @param container - The new container element.
+   *
+   * @returns The gizmo instance for method chaining
+   */
+  setContainer(container: HTMLElement) {
+    if (this._container === container) return this;
+    this._container = container;
+    this._container.appendChild(this._domElement);
+    return this.domUpdate();
+  }
+
+  /**
    * Performs a complete update of the gizmo, including both DOM and camera-related updates.
    *
    * @param controls - Internal. Set to `false` if the update event comes from the attached controls.
