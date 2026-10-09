@@ -454,8 +454,14 @@ export class ViewportGizmo extends Object3D<ViewportGizmoEventMap> {
     return this;
   }
 
-  /** Cleans up all resources including geometries, materials, textures, and event listeners. */
-  dispose() {
+  /**
+   * Cleans up all resources including geometries, materials, textures, and event listeners.
+   *
+   * Overrides `Object3D.dispose()` (three r186+) without calling it: the base
+   * method only fires a `dispose` event, and it does not exist in the older
+   * three releases the peer range still admits.
+   */
+  override dispose() {
     this.detachControls();
 
     this.animating = false;

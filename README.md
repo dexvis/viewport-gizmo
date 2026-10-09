@@ -119,7 +119,7 @@ home view, buttons — is configuration, not patching.
 ```bash
 npm install
 npm test        # vitest
-npm run build   # tsup -> dist/
+npm run build   # tsdown -> dist/ (ES module + bundled type declarations)
 ```
 
 ## License
